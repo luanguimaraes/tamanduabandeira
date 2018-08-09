@@ -10,7 +10,7 @@ PRIMARY KEY (id_tipo_servidor)
 
  CREATE TABLE unidade(
  id_unidade INT NOT NULL AUTO_INCREMENT,
- cnpj_unidade CHAR(18) NOT NULL,
+ cnpj_unidade NUMBER NOT NULL,
  nome_unidade VARCHAR(76) NOT NULL,
  endereco_unidade VARCHAR(36) NOT NULL ,
  municipio_unidade VARCHAR(36) NOT NULL ,
@@ -24,7 +24,7 @@ PRIMARY KEY (id_tipo_servidor)
 
  CREATE TABLE servidor(
 id_servidor INT NOT NULL AUTO_INCREMENT,
-cpf_usuario CHAR(14) NOT NULL ,
+cpf_usuario NUMBER NOT NULL ,
 nome_usuario VARCHAR(64) NOT NULL ,
 formacao_usuario VARCHAR(88),
 email_usuario VARCHAR(76) NOT NULL ,
