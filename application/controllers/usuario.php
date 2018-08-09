@@ -3,11 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuario extends CI_Controller {
 
-	public function index()
+	public function index($indice=null)
 	{
+		$this->db->select('*');
+		$dados['usuarios'] = $this->db->get('servidor')->result();
+
 		$this->load->view('includes/html_header');
 		$this->load->view('includes/menu');
-		$this->load->view('listar_usuario');
+		$this->load->view('listar_usuario',$dados);
 		$this->load->view('includes/html_footer');
 	}
 
@@ -29,6 +32,14 @@ class Usuario extends CI_Controller {
 
 
 		if ($this->db->insert('servidor',$data)) {
+			redirect('usuario');
+		}
+	}
+
+	public function excluir($id=null)
+	{
+		$this->db->where('id_servidor',$id);
+		if($this->db->delete('servidor')) {
 			redirect('usuario');
 		}
 	}

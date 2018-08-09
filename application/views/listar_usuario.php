@@ -7,6 +7,32 @@
             <div class="col-md-2">
               <a class="btn btn-primary btn-block" href="<?=base_url()?>usuario/cadastro">Novo Usuário</a>
             </div>
+
         </main>
+      </div>
+
+      <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <table class="table table-striped">
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>CPF</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <?php foreach($usuarios as $usu) {?>
+          <tr>
+            <td><?= $usu->id_servidor;?></td>
+            <td><?= $usu->nome_usuario?></td>
+            <td><?= $usu->email_usuario?></td>
+            <td><?= $usu->cpf_usuario?></td>
+            <td>
+              <a href="" class="btn btn-primary btn-group">Atualizar</a>
+              <a href="<?= base_url('usuario/excluir/'.$usu->id_servidor)?>" class="btn btn-danger btn-group" onclick="return confirm('Deseja excluir o usuário <?=$usu->nome_usuario?>?');">Remover</a>
+            </td>
+          </tr>
+          <?php }?>
+        </table>
       </div>
     </div>

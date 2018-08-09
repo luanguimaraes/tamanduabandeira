@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>Tamanduá Sistemas</title>
     <link href="<?= base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= base_url(); ?>assets/css/dashboard.css" rel="stylesheet">
   </head>

@@ -13,15 +13,58 @@
         <form action="<?= base_url()?>usuario/cadastrar" method="post">
           <div class="form-group">
             <label for="exampleInputNome">Nome</label>
-            <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome">
+            <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome completo">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputNome">CPF</label>
+            <input type="text" class="form-control" name="cpf" id="cpf" placeholder="Somente números">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
-            <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+            <input type="email" class="form-control" name="email" id="email" placeholder="Email@email.com">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Endereço</label>
+            <input type="text" class="form-control" name="endereco" id="endereco" placeholder="Rua, Avenida...">
+          </div>
+
+
+
+
+
+          <div class="row">
+            <div class="col-md-9">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Cidade</label>
+                <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Estado</label>
+                <input type="text" class="form-control" name="estado" id="estado" placeholder="Estado">
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Telefone</label>
+            <input type="text" class="form-control" name="telefone" id="telefone" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nível Usuário</label>
+            <input type="text" class="form-control" name="tipo" id="tipo" placeholder="Tipo">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Unidade</label>
+            <input type="text" class="form-control" name="unidade" id="unidade" placeholder="Unidade">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Senha</label>
-            <input type="password" class="form-control" name="senha" id="password" placeholder="Senha">
+            <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha">
           </div>
 
           <div style="text-align: right">
