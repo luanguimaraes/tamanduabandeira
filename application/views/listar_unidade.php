@@ -1,11 +1,11 @@
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pt-5">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <div class="col-2 col-md-8">
-              <h1 class="h2">Usuários</h1>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <div class="col-md-10">
+              <h1 class="h2">Unidades</h1>
             </div>
-            <div class=" col-2 col-md-2">
-              <a class="btn btn-primary btn-block" href="<?=base_url()?>usuario/cadastro">Novo Usuário</a>
+            <div class="col-md-2">
+              <a class="btn btn-primary btn-block" href="<?=base_url()?>unidade/cadastro">Nova Unidade</a>
             </div>
 
         </main>
