@@ -18,7 +18,7 @@ class Usuario extends CI_Controller {
 			$this->load->view('includes/msg_erro',$data);
 		}else if($indice==3){
 			$data['msg'] = 'Usuário excluido com sucesso.';
-			$this->load->view('includes/msg_erro',$data);
+			$this->load->view('includes/msg_sucesso',$data);
 		}else if($indice==4){
 			$data['msg'] = 'Erro ao excluir o usuário.';
 			$this->load->view('includes/msg_erro',$data);
@@ -40,7 +40,14 @@ class Usuario extends CI_Controller {
 		$data['nome_usuario'] = $this->input->post('nome');
 		$data['email_usuario'] = $this->input->post('email');
 		$data['cpf_usuario'] = $this->input->post('cpf');
-		$data['id_tipo_servidor'] = 1;
+		$data['formacao_usuario'] = $this->input->post('formacao');
+		$data['telefone_usuario'] = $this->input->post('telefone');
+		$data['endereco_usuario'] = $this->input->post('endereco');
+		$data['cidade_usuario'] = $this->input->post('cidade');
+		$data['estado_usuario'] = $this->input->post('estado');
+		// $data['unidade_usuario'] = $this->input->post('unidade');
+		$data['id_tipo_servidor'] = $this->input->post('nivel');
+		// $data['id_tipo_servidor'] = 1;
 		$data['id_unidade'] = 1;
 		$data['senha'] = md5($this->input->post('senha'));
 

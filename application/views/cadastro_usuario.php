@@ -11,35 +11,40 @@
         <form action="<?= base_url()?>usuario/cadastrar" method="post">
           <div class="form-group">
             <label for="exampleInputNome">Nome:</label>
-            <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome completo">
+            <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome completo" maxlength="64">
           </div>
 
           <div class="row">
             <div class="col-md-3">
               <div class="form-group">
                 <label for="exampleInputNome">CPF:</label>
-                <input type="text" class="form-control" name="cpf" id="cpf" placeholder="Somente números">
+                <input type="number" class="form-control" name="cpf" id="cpf" placeholder="Somente números" max="9999999999">
               </div>
             </div>
             <div class="col-md-9">
               <div class="form-group">
                 <label for="exampleInputEmail1">Email:</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Email@email.com">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email@email.com" maxlength="76">
               </div>
             </div>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputNome">Formação:</label>
+            <input type="text" class="form-control" name="formacao" id="formacao" placeholder="Básico..., Técnico em..., Superior em..." maxlength="88">
           </div>
 
           <div class="row">
             <div class="col-md-3">
               <div class="form-group">
                 <label for="exampleInputEmail1">Telefone:</label>
-                <input type="text" class="form-control" name="telefone" id="telefone" placeholder="Somente números">
+                <input type="number" class="form-control" name="telefone" id="telefone" placeholder="Somente números">
               </div>
             </div>
             <div class="col-md-9">
               <div class="form-group">
                 <label for="exampleInputEmail1">Endereço:</label>
-                <input type="text" class="form-control" name="endereco" id="endereco" placeholder="Rua, Avenida...">
+                <input type="text" class="form-control" name="endereco" id="endereco" placeholder="Rua, Avenida..." maxlength="36">
               </div>
             </div>
           </div>
@@ -48,13 +53,13 @@
             <div class="col-md-9">
               <div class="form-group">
                 <label for="exampleInputEmail1">Cidade:</label>
-                <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade">
+                <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade" maxlength="36">
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
                 <label for="exampleInputEmail1">Estado:</label>
-                <input type="text" class="form-control" name="estado" id="estado" placeholder="Estado">
+                <input type="text" class="form-control" name="estado" id="estado" placeholder="Estado" maxlength="36">
               </div>
             </div>
           </div>
@@ -78,7 +83,7 @@
             <div class="col-md-3">
               <div class="form-group">
                 <label for="exampleInputPassword1">Senha:</label>
-                <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha">
+                <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha" maxlength="50">
               </div>
             </div>
           </div>
