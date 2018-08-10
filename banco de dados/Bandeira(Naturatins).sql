@@ -127,7 +127,7 @@ FOREIGN KEY (id_animal) REFERENCES animal(id_animal)
  nome_cientifico VARCHAR(64) NOT NULL,
  quantidade INT,
  observacao_adicionail VARCHAR(64),
- cod_marcacao VARCHAR(36) NOT NULL,
+ marcacao_individual VARCHAR(36) NOT NULL,
  id_atuador INT NOT NULL,
  identificacao_taxonomica INT NOT NULL,
  PRIMARY KEY (id_cativeiro),
