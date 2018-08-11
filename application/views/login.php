@@ -18,13 +18,13 @@
   </head>
 
   <body class="text-center">
-    <form class="form-signin" action="<?= base_url()?>">
+    <form class="form-signin" action="<?= base_url()?>dashboard/logar" method="post">
       <img class="mb-4" src="<?= base_url(); ?>assets/img/tamandua.jpg" alt="" width="100" height="100">
       <h1 class="h3 mb-3 font-weight-normal">Tamanduá Sistemas</h1>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de email" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+      <label for="inputEmail" class="sr-only">CPF</label>
+      <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF" maxlength="11" required autofocus>
+      <label for="inputPassword" class="sr-only">Senha:</label>
+      <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" required>
       <!-- <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Remember me

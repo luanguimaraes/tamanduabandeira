@@ -24,7 +24,7 @@ PRIMARY KEY (id_tipo_servidor)
 
  CREATE TABLE servidor(
 id_servidor INT NOT NULL AUTO_INCREMENT,
-cpf_usuario VARCHAR(13) ,
+cpf_usuario VARCHAR(11) NOT NULL,
 nome_usuario VARCHAR(64) NOT NULL ,
 formacao_usuario VARCHAR(88),
 email_usuario VARCHAR(76) NOT NULL ,
@@ -216,6 +216,9 @@ FOREIGN KEY (id_animal) REFERENCES animal(id_animal)
   PRIMARY KEY (id_obito),
   FOREIGN KEY (id_avaliacao) REFERENCES avaliacao(id_avaliacao)
   );
+
+  INSERT INTO unidade (id_unidade)
+ VALUES ('0');
 
    INSERT INTO tipo_servidor (id_tipo_servidor, descricao_tipo_servidor)
   VALUES ('1','gerente' );
