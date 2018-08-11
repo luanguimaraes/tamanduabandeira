@@ -17,19 +17,19 @@
       <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <table class="table table-striped">
           <tr>
-            <th>ID</th>
             <th>Nome</th>
-            <th>Email</th>
             <th>CPF</th>
+            <th>Nível</th>
+            <th>Unidade</th>
             <th></th>
             <th></th>
           </tr>
           <?php foreach($usuarios as $usu) {?>
           <tr>
-            <td><?= $usu->id_servidor;?></td>
             <td><?= $usu->nome_usuario?></td>
-            <td><?= $usu->email_usuario?></td>
             <td><?= $usu->cpf_usuario?></td>
+            <td><?= $usu->id_tipo_servidor==1?'Funcionário':($usu->id_tipo_servidor==2?'Gerente':'Admistrador');    ?></td>
+            <td><?= $usu->nome_unidade.' - '.$usu->municipio_unidade;?></td>
             <td>
               <a href="<?= base_url('usuario/editar/'.$usu->id_servidor)?>" class="btn btn-primary btn-group">Editar</a>
               <a href="<?= base_url('usuario/excluir/'.$usu->id_servidor)?>" class="btn btn-danger btn-group" onclick="return confirm('Deseja excluir o usuário <?=$usu->nome_usuario?>?');">Remover</a>

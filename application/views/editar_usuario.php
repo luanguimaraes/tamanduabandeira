@@ -68,7 +68,7 @@
           <select id="unidade" name="unidade" class="form-control" required>
             <option value="1"> --- </option>
             <?php foreach($unidades as $unidade) {?>
-            <option value="<?= $unidade->id_unidade?>" <?= $usuario[0]->id_unidade==$unidade->id_unidade?' selected ':''; ?> ><?= $unidade->nome_unidade.' - '.$unidade->municipio_unidade; ?></option>
+            <option value="<?= $unidade->id_unidade?>" <?= $usuario[0]->id_unidade_usuario==$unidade->id_unidade?' selected ':''; ?> ><?= $unidade->nome_unidade.' - '.$unidade->municipio_unidade; ?></option>
             <?php }?>
           </select>
 

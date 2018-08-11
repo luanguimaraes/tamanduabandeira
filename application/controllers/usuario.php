@@ -14,6 +14,7 @@ class Usuario extends CI_Controller {
 	{
 		$this->verificar_sessao();
 		$this->db->select('*');
+		$this->db->join('unidade','id_unidade_usuario=id_unidade', 'inner');
 		$dados['usuarios'] = $this->db->get('servidor')->result();
 
 		$this->load->view('includes/html_header');
@@ -62,7 +63,7 @@ class Usuario extends CI_Controller {
 		$data['endereco_usuario'] = $this->input->post('endereco');
 		$data['cidade_usuario'] = $this->input->post('cidade');
 		$data['estado_usuario'] = $this->input->post('estado');
-		$data['id_unidade'] = $this->input->post('unidade');
+		$data['id_unidade_usuario'] = $this->input->post('unidade');
 		$data['id_tipo_servidor'] = $this->input->post('nivel');
 		// $data['id_unidade'] = 1;
 		$data['senha'] = md5($this->input->post('senha'));
@@ -117,7 +118,7 @@ class Usuario extends CI_Controller {
 		// $data['unidade_usuario'] = $this->input->post('unidade');
 		$data['id_tipo_servidor'] = $this->input->post('nivel');
 		// $data['id_tipo_servidor'] = 1;
-		$data['id_unidade'] = $this->input->post('unidade');
+		$data['id_unidade_usuario'] = $this->input->post('unidade');
 
 
 		$this->db->where('id_servidor',$id);

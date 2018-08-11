@@ -34,7 +34,7 @@ estado_usuario VARCHAR(36),
 telefone_usuario VARCHAR(14),
 id_tipo_servidor INT NOT NULL,
 senha VARCHAR(50) NOT NULL,
-id_unidade INT NOT NULL,
+id_unidade_usuario INT NOT NULL,
 PRIMARY KEY (id_servidor),
 FOREIGN KEY (id_tipo_servidor) REFERENCES tipo_servidor(id_tipo_servidor),
 FOREIGN KEY (id_unidade) REFERENCES unidade(id_unidade)
