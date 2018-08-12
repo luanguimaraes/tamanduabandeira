@@ -97,7 +97,7 @@
 
 
           <div style="text-align: right">
-            <button type="submit" class="btn btn-success">Proximo>></button>
+            <button type="submit" class="btn btn-success">Concluir</button>
           </div>
         </form>
 

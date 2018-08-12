@@ -3,10 +3,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Ficha extends CI_Controller {
 
-	public function verificar_sessao()
+	public function verificar_sessao($num=null)
 	{
 		if ($this->session->userdata('logado')==false) {
 			redirect('dashboard/login');
+		}
+		else{
+			$permissao = $this->session->userdata('id_tipo_servidor');
+			if ($permissao>=$num || $num==null) {
+
+			}else{
+				redirect('dashboard');
+			}
 		}
 	}
 
@@ -14,8 +22,8 @@ class Ficha extends CI_Controller {
 	{
 		$this->verificar_sessao();
 		$this->db->select('*');
-		// $this->db->join('unidade','id_unidade_recebimento=id_unidade', 'inner');
-		$dados['unidades'] = $this->db->get('recebimentos')->result();
+		$this->db->join('unidade','id_unidade_recebimento=id_unidade', 'inner');
+		$dados['fichas'] = $this->db->get('recebimentos')->result();
 
 		$this->load->view('includes/html_header');
 		$this->load->view('includes/menu');
@@ -48,6 +56,8 @@ class Ficha extends CI_Controller {
 		$dados['unidades'] = $this->db->get('unidade')->result();
 		$dados['usuario_logado'] = $this->session->userdata('nome');
 		$dados['cpf_logado'] = $this->session->userdata('cpf');
+
+
 
 		$this->load->view('includes/html_header');
 		$this->load->view('includes/menu');
@@ -116,15 +126,11 @@ class Ficha extends CI_Controller {
 			if ($this->db->insert('classicicacao_animal',$data2)) {
 				redirect('ficha/1');
 			}
-
-
 		}
 		else {
 			redirect('ficha/2');
 		}
 	}
-
-
 }
 
 

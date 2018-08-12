@@ -33,7 +33,7 @@
             <td>
               <a href="<?= base_url('usuario/editar/'.$usu->id_servidor)?>" class="btn btn-primary btn-group">Editar</a>
               <a href="<?= base_url('usuario/excluir/'.$usu->id_servidor)?>" class="btn btn-danger btn-group" onclick="return confirm('Deseja excluir o usuário <?=$usu->nome_usuario?>?');">Remover</a>
-              <a href="#" class="btn btn-warning btn-group">Perfil</a>
+              <a href="<?= base_url('usuario/perfil/'.$usu->id_servidor)?>" class="btn btn-warning btn-group">Perfil</a>
             </td>
           </tr>
           <?php }?>
