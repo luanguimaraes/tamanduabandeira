@@ -80,10 +80,9 @@ class Ficha extends CI_Controller {
 			$data['id_taxonomica'] = $this->db->insert_id();
 
 			$this->load->view('includes/html_header');
-			// $this->load->view('includes/menu');
+			$this->load->view('includes/menu');
 			$this->load->view('cadastro_ficha_recebimento2',$data);
 			$this->load->view('includes/html_footer');
-
 		}
 		else {
 			redirect('ficha/2');
@@ -93,8 +92,32 @@ class Ficha extends CI_Controller {
   }
 
 	if ($indice==2) {
-		if ($this->db->insert('recebimentos',$data)) {
-			redirect('ficha/1');
+
+		$data['nome_atuador'] = $this->input->post('nome_atuador');
+		$data['cpf_cnpj_atuador'] = $this->input->post('cpf_cnpj_atuador');
+		$data['telefone_atuador'] = $this->input->post('telefone_atuador');
+		$data['endereco_atuador'] = $this->input->post('endereco_atuador');
+		$data['municipio_uf_atuador'] = $this->input->post('municipio_atuador');
+		$data['cep_atuador'] = $this->input->post('cep_atuador');
+		$data['datta'] = $this->input->post('data_atuador');
+		$data['auto_infracao_numero'] = $this->input->post('auto_infracao_numero');
+		$data['boletim_ocorrencia_numero'] = $this->input->post('boletim_ocorrencia_numero');
+		$data['identificacao_taxonomica'] = $this->input->post('identificacao_taxonomica');
+
+
+		if ($this->db->insert('atuador',$data)) {
+			$data2['id_atuador'] = $this->db->insert_id();
+			$data2['nome_comum'] = $this->input->post('nome_comum');
+			$data2['nome_cientifico'] = $this->input->post('nome_cientifico');
+			$data2['quantidade'] = $this->input->post('quantidade');
+			$data2['observacao_adicional'] = $this->input->post('observacao_adicional');
+			$data2['marcacao_individual'] = $this->input->post('marcacao_individual');
+			$data2['identificacao_taxonomica'] = $data['identificacao_taxonomica'];
+			if ($this->db->insert('classicicacao_animal',$data2)) {
+				redirect('ficha/1');
+			}
+
+
 		}
 		else {
 			redirect('ficha/2');
@@ -102,7 +125,7 @@ class Ficha extends CI_Controller {
 	}
 
 
-	}
+}
 
 
 
