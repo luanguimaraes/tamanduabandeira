@@ -40,6 +40,9 @@ class Usuario extends CI_Controller {
 		}
 		$this->load->view('listar_usuario',$dados);
 		$this->load->view('includes/html_footer');
+
+
+		// echo $this->session->userdata('nome');
 	}
 
 	public function cadastro()
@@ -50,6 +53,7 @@ class Usuario extends CI_Controller {
 		$this->load->view('includes/menu');
 		$this->load->view('cadastro_usuario',$dados);
 		$this->load->view('includes/html_footer');
+
 	}
 
 	public function cadastrar()
@@ -65,7 +69,6 @@ class Usuario extends CI_Controller {
 		$data['estado_usuario'] = $this->input->post('estado');
 		$data['id_unidade_usuario'] = $this->input->post('unidade');
 		$data['id_tipo_servidor'] = $this->input->post('nivel');
-		// $data['id_unidade'] = 1;
 		$data['senha'] = md5($this->input->post('senha'));
 
 

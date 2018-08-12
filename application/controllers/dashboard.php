@@ -38,6 +38,8 @@ class Dashboard extends CI_Controller {
 			$dados['nome'] = $data['usuario'][0]->nome_usuario;
 			$dados['id'] = $data['usuario'][0]->id_servidor;
 			$dados['logado'] = true;
+			$dados['id_tipo_servidor'] = $data['usuario'][0]->id_tipo_servidor;
+			$dados['cpf'] = $data['usuario'][0]->cpf_usuario;
 			$this->session->set_userdata($dados);
 			redirect('dashboard');
 		}else{

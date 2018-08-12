@@ -36,7 +36,7 @@
               <span data-feather="user"></span>
               Perfil
             </a>
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="<?= base_url()?>ficha">
               <span data-feather="file"></span>
               Fichas
             </a>

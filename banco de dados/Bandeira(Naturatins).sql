@@ -62,6 +62,31 @@ CREATE TABLE avaliacao(
   PRIMARY KEY (id_avaliacao)
   );
 
+
+CREATE TABLE recebimentos(
+identificacao_taxonomica INT NOT NULL AUTO_INCREMENT,
+data_recebimento DATE NOT NULL ,
+-- endereco_instituicao VARCHAR(36) NOT NULL,
+-- telefone_instituicao VARCHAR(14) NOT NULL ,
+-- municipio_uf_instituicao VARCHAR(36) NOT NULL ,
+-- cep_instituicao INT(8) NOT NULL,
+nome_resp_entrega VARCHAR(36) NOT NULL ,
+cpf_resp_entrega CHAR(14) NOT NULL,
+matricula_resp_entrega INT(64) NOT NULL ,
+nome_procedencia VARCHAR(36) NOT NULL,
+uf_municipio_procedencia VARCHAR(36) NOT NULL ,
+residencia_procedencia VARCHAR(36),
+local_procedencia VARCHAR(36),
+deposito_procedencia VARCHAR(36),
+dieta VARCHAR(36),
+tempo_cativeiro VARCHAR(36),
+-- id_atuador INT NOT NULL,
+id_unidade_recebimento INT NOT NULL,
+PRIMARY KEY (identificacao_taxonomica),
+FOREIGN KEY (id_unidade_recebimento) REFERENCES unidade (id_unidade)
+-- FOREIGN KEY (id_atuador) REFERENCES atuador(id_atuador)
+);
+
 CREATE TABLE atuador(
  id_atuador INT NOT NULL AUTO_INCREMENT,
  nome_atuador VARCHAR(36),
@@ -73,31 +98,10 @@ CREATE TABLE atuador(
  datta date,
  auto_infracao_numero varchar(200),
  boletim_ocorrencia_numero INT,
- PRIMARY KEY (id_atuador)
+ identificacao_taxonomica INT NOT NULL,
+ PRIMARY KEY (id_atuador),
+ FOREIGN KEY (identificacao_taxonomica) REFERENCES recebimentos (identificacao_taxonomica)
  );
-
-CREATE TABLE recebimentos(
-identificacao_taxonomica INT NOT NULL AUTO_INCREMENT,
-data_recebimento DATE NOT NULL ,
-nome_instituicao VARCHAR(64) NOT NULL ,
-endereco_instituicao VARCHAR(36) NOT NULL,
-telefone_instituicao VARCHAR(14) NOT NULL ,
-municipio_uf_instituicao VARCHAR(36) NOT NULL ,
-cep_instituicao INT(8) NOT NULL,
-nome_resp_entrega VARCHAR(36) NOT NULL ,
-cpf_resp_entrega CHAR(14) NOT NULL,
-matricula_resp_entrega INT(64) NOT NULL ,
-nome_procedencia VARCHAR(36) NOT NULL,
-uf_municipio_procedencia VARCHAR(36) NOT NULL ,
-residencia_procedencia VARCHAR(36),
-local_procedencia VARCHAR(36),
-deposito_proedencia VARCHAR(36),
-dieta VARCHAR(36),
-tempo_cativeiro VARCHAR(36),
-id_atuador INT NOT NULL,
-PRIMARY KEY (identificacao_taxonomica),
-FOREIGN KEY (id_atuador) REFERENCES atuador(id_atuador)
-);
 
 CREATE TABLE triagem(
 id_triagem INT NOT NULL AUTO_INCREMENT,
@@ -134,9 +138,6 @@ FOREIGN KEY (id_animal) REFERENCES animal(id_animal)
  PRIMARY KEY (id_cativeiro),
  FOREIGN KEY (identificacao_taxonomica) REFERENCES recebimentos(identificacao_taxonomica)
  );
-
-
-
 
  CREATE TABLE cativeiro(
  id_cativeiro INT NOT NULL AUTO_INCREMENT,

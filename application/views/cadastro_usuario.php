@@ -66,10 +66,10 @@
 
           <div class="form-group">
             <label for="exampleInputEmail1">Escolha a unidade:</label>
-            <select id="unidade" name="unidade" class="form-control" required>
+            <select id="unidade" name="unidade" class="form-control"  required>
               <option value="1"> --- </option>
               <?php foreach($unidades as $unidade) {?>
-              <option value="<?= $unidade->id_unidade?>"><?= $unidade->nome_unidade.' - '.$unidade->municipio_unidade; ?></option>
+              <option  value="<?= $unidade->id_unidade?>"><?= $unidade->nome_unidade.' - '.$unidade->municipio_unidade; ?></option>
               <?php }?>
             </select>
           </div>
