@@ -258,3 +258,5 @@ FOREIGN KEY (id_animal) REFERENCES animal(id_animal)
 
   INSERT INTO animal (id_animal, categoria)
   VALUES ('8','Exóticos' );
+  
+  
