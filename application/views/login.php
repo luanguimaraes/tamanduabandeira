@@ -19,7 +19,7 @@
 
   <body class="text-center">
     <form class="form-signin" action="<?= base_url()?>dashboard/logar" method="post">
-      <img class="mb-4" src="<?= base_url(); ?>assets/img/tamandua.jpg" alt="" width="100" height="100">
+      <img class="mb-4" src="<?= base_url(); ?>assets/img/tamandua.jpg" alt="IMG" width="100" height="100">
       <h1 class="h3 mb-3 font-weight-normal">Tamanduá Sistemas</h1>
       <label for="inputEmail" class="sr-only">CPF</label>
       <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF" maxlength="11" required autofocus>

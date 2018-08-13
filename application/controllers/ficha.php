@@ -13,7 +13,8 @@ class Ficha extends CI_Controller {
 			if ($permissao>=$num || $num==null) {
 
 			}else{
-				redirect('dashboard');
+			// echo "<script type='text/javascript'>alert('text');</script>";
+			redirect('dashboard');
 			}
 		}
 	}
@@ -26,6 +27,32 @@ class Ficha extends CI_Controller {
 		$this->db->order_by('data_recebimento','DESC');
 		//ASC
 		$dados['fichas'] = $this->db->get('recebimentos')->result();
+		$dados['triagens'] = $this->db->get('triagem')->result();
+		$dados['avaliacao'] = $this->db->get('avaliacao')->result();
+
+
+
+
+		// $this->db->select('identificacao_taxonomica');
+		// $this->db->where('identificacao_taxonomica',$indice);
+		// $retorno = $this->db->get('triagem')->num_rows();
+
+
+		// if($retorno > 0){
+		// 	$this->db->where('identificacao_taxonomica',$indice);
+		// 	if($this->db->update('triagem',$data)) {
+		// 			redirect('ficha/1');
+		// 	}
+		// }else {
+		// 	if($this->db->insert('triagem',$data)) {
+		// 			redirect('ficha/1');
+		// 	}
+		// }
+
+
+
+
+
 
 		$this->load->view('includes/html_header');
 		$this->load->view('includes/menu');
@@ -240,6 +267,38 @@ class Ficha extends CI_Controller {
 					redirect('ficha/1');
 			}
 		}
+	}
+
+	public function cadastro_avaliacao($indice=null)
+	{
+		$this->verificar_sessao();
+		$dados['id'] = $indice;
+
+		$this->load->view('includes/html_header');
+		$this->load->view('includes/menu');
+		$this->load->view('cadastro_ficha_avaliacao',$dados);
+		$this->load->view('includes/html_footer');
+
+	}
+
+	public function cadastrar_avaliacao($indice=null)
+	{
+		$id = $this->input->post('id_taxonomica');
+
+
+
+
+
+		// $data['especie_avaliacao'] = $this->input->post('unidade');
+		// $data['marcacao_indv_tipo'] = $this->input->post('unidade');
+		// $data['marcacao_indv_localizacao'] = $this->input->post('unidade');
+		// $data['marcacao_indv_numeracao'] = $this->input->post('unidade');
+		// $data['marcacao_indv_sexagem'] = $this->input->post('unidade');
+		// $data['marcacao_indv_historico'] = $this->input->post('unidade');
+		// $data['marcacao_indv_anamnese'] = $this->input->post('unidade');
+		// $data['avaliacao_compormental'] = $this->input->post('unidade');
+		// $data['exames_arquivo'] = $this->input->post('unidade'); //??
+
 
 	}
 

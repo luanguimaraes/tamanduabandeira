@@ -111,7 +111,7 @@ class Unidade extends CI_Controller {
 		$data['cep_unidade'] = $this->input->post('cep');
 		$data['municipio_unidade'] = $this->input->post('cidade');
 		$data['estado_unidade'] = $this->input->post('estado');
-
+	
 
 		$this->db->where('id_unidade',$id);
 		if ($this->db->update('unidade',$data)) {
