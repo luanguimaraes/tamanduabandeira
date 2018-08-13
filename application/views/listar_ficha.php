@@ -4,9 +4,7 @@
             <div class="col-md-1">
               <h1 class="h2">Fichas</h1>
             </div>
-            <div class="col-md-8">
-              <input class="form-control form-control-dark w-100" type="text" placeholder="Pesquisar" aria-label="Search">
-            </div>
+
             <div class=" col-2 col-md-2">
               <a class="btn btn-primary btn-block" href="<?=base_url()?>ficha/cadastro">Nova Ficha</a>
             </div>
@@ -23,6 +21,8 @@
             <th>Data Recebimento</th>
             <th></th>
             <th></th>
+            <th></th>
+            <th></th>
           </tr>
           <?php foreach($fichas as $ficha) {?>
           <tr>
@@ -31,9 +31,9 @@
             <td><?= $ficha->nome_procedencia?></td>
             <td><?= date('d-m-Y' ,strtotime($ficha->data_recebimento))?></td>
             <td>
-              <a href="<?= base_url('usuario/editar/'.$ficha->identificacao_taxonomica)?>" class="btn btn-primary btn-group">Editar</a>
-              <a href="<?= base_url('usuario/excluir/'.$ficha->identificacao_taxonomica)?>" class="btn btn-danger btn-group" onclick="return confirm('Deseja excluir a ficha <?=$ficha->identificacao_taxonomica?>?');">Remover</a>
-              <a href="#" class="btn btn-warning btn-group">Perfil</a>
+              <a href="<?= base_url('ficha/editar/'.$ficha->identificacao_taxonomica)?>" class="btn btn-primary btn-group">Recebimento</a>
+              <a href="<?= base_url('ficha/editar/'.$ficha->identificacao_taxonomica)?>" class="btn btn-danger btn-group" onclick="return confirm('Deseja excluir a ficha <?=$ficha->identificacao_taxonomica?>?');">Triagem</a>
+              <a href="#" class="btn btn-warning btn-group">Avaliação</a>
             </td>
           </tr>
           <?php }?>

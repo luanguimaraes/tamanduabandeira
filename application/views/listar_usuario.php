@@ -4,9 +4,7 @@
             <div class="col-md-1">
               <h1 class="h2">Usuários</h1>
             </div>
-            <div class="col-md-8">
-              <input class="form-control form-control-dark w-100" type="text" placeholder="Pesquisar" aria-label="Search">
-            </div>
+
             <div class=" col-2 col-md-2">
               <a class="btn btn-primary btn-block" href="<?=base_url()?>usuario/cadastro">Novo Usuário</a>
             </div>

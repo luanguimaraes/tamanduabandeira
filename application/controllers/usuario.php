@@ -136,10 +136,11 @@ class Usuario extends CI_Controller {
 	public function perfil($id=null)
 	{
 		$this->verificar_sessao();
-		
+
 		if ($id==null) {
 			$id = $this->session->userdata('id');
 		}
+
 		$data['unidades'] = $this->db->get('unidade')->result();
 		$this->db->where('id_servidor',$id);
 		$data['usuario'] = $this->db->get('servidor')->result();

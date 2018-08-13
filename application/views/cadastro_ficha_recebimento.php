@@ -8,7 +8,7 @@
       </div>
 
       <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
-        <form action="<?= base_url()?>ficha/cadastrar/1" method="post">
+        <form action="<?= base_url()?>ficha/cadastrar" method="post">
 
           <style media="screen">
             fieldset{
@@ -24,7 +24,7 @@
             }
           </style>
 
-          <fieldset> <legend>Parte 1/2</legend>
+          <fieldset>
 
 
           <fieldset class="form-group"> <legend>Unidade</legend>
@@ -37,25 +37,7 @@
                 <?php }?>
               </select>
             </div>
-            <!-- <div class="form-group">
-              <label for="exampleInputNome">Endereço da Unidade: *</label>
-              <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome completo" maxlength="64" required>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputNome">Telefone da Unidade:  *</label>
-              <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome completo" maxlength="64" required>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputNome">Cidade da Unidade:  *</label>
-              <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome completo" maxlength="64" required>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputNome">CEP Unidade:  *</label>
-              <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome completo" maxlength="64" required>
-            </div> -->
           </fieldset>
-
-
 
           <fieldset>
             <legend>Responsável</legend>
@@ -73,8 +55,6 @@
           </div>
           </fieldset>
 
-
-
           <fieldset>
           <legend>Procedência</legend>
 
@@ -84,19 +64,19 @@
           </div>
           <div class="form-group">
             <label for="exampleInputNome">UF Município Procedencia:</label>
-            <input type="text" class="form-control" name="uf_municipio_procedencia" id="uf_municipio_procedencia" placeholder="Nome completo" maxlength="36" required>
+            <input type="text" class="form-control" name="uf_municipio_procedencia" id="uf_municipio_procedencia"  maxlength="36" required>
           </div>
           <div class="form-group">
             <label for="exampleInputNome">Residencia Procedencia:</label>
-            <input type="text" class="form-control" name="residencia_procedencia" id="residencia_procedencia" placeholder="Nome completo" maxlength="36">
+            <input type="text" class="form-control" name="residencia_procedencia" id="residencia_procedencia"  maxlength="36">
           </div>
           <div class="form-group">
             <label for="exampleInputNome">Local Procedencia:</label>
-            <input type="text" class="form-control" name="local_procedencia" id="local_procedencia" placeholder="Nome completo" maxlength="36">
+            <input type="text" class="form-control" name="local_procedencia" id="local_procedencia"  maxlength="36">
           </div>
           <div class="form-group">
             <label for="exampleInputNome">Deposito Procedencia:</label>
-            <input type="text" class="form-control" name="deposito_procedencia" id="deposito_procedencia" placeholder="Nome completo" maxlength="36">
+            <input type="text" class="form-control" name="deposito_procedencia" id="deposito_procedencia"  maxlength="36">
           </div>
           </fieldset>
 
@@ -113,14 +93,81 @@
           </div>
           <div class="form-group">
             <label for="exampleInputNome">Tempo Cativeiro:</label>
-            <input type="text" class="form-control" name="tempo_cativeiro" id="tempo_cativeiro" placeholder="Nome completo" maxlength="36">
+            <input type="text" class="form-control" name="tempo_cativeiro" id="tempo_cativeiro"  maxlength="36">
           </div>
           </fieldset>
-            </fieldset>
+
+          <fieldset>
+            <legend>Classificação Animal</legend>
+          <div class="form-group">
+            <label for="exampleInputNome">Nome Comum: </label>
+            <input type="text" class="form-control" name="nome_comum" id="nome_comum"  maxlength="36">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputNome">Nome Científico:  *</label>
+            <input type="text" class="form-control" name="nome_cientifico" id="nome_cientifico" maxlength="64" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputNome">Quantidade:</label>
+            <input type="number" class="form-control" name="quantidade" id="quantidade">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputNome">Observação Adicional: </label>
+            <input type="text" class="form-control" name="observacao_adicional" id="observacao_adicional"  maxlength="64">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputNome">Marcação Individual  *: </label>
+            <input type="text" class="form-control" name="marcacao_individual" id="marcacao_individual"  maxlength="36" required>
+          </div>
+          </fieldset>
+
+
+          <fieldset>
+          <legend>Atuador</legend>
+
+          <div class="form-group">
+            <label for="exampleInputNome">Nome:</label>
+            <input type="text" class="form-control" name="nome_atuador" id="nome_atuador" placeholder="Nome completo" maxlength="36">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputNome">CPF/CNPJ:</label>
+            <input type="text" class="form-control" name="cpf_cnpj_atuador" id="cpf_cnpj_atuador" placeholder="CPF ou CNPJ" maxlength="18">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputNome">Telefone:</label>
+            <input type="text" class="form-control" name="telefone_atuador" id="telefone_atuador" maxlength="16">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputNome">Endereço:</label>
+            <input type="text" class="form-control" name="endereco_atuador" id="endereco_atuador" maxlength="36">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputNome">Município:</label>
+            <input type="text" class="form-control" name="municipio_atuador" id="municipio_atuador" placeholder="Nome completo" maxlength="36">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputNome">CEP:</label>
+            <input type="text" class="form-control" name="cep_atuador" id="cep_atuador" placeholder="Somento números" maxlength="8">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputNome">Data:</label>
+            <input type="date" class="form-control" name="data_atuador" id="data_atuador">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputNome">Número Infração:</label>
+            <input type="text" class="form-control" name="auto_infracao_numero" id="auto_infracao_numero" maxlength="200">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputNome">Número Boletim de Ocorrência:</label>
+            <input type="number" class="form-control" name="boletim_ocorrencia_numero" id="boletim_ocorrencia_numero">
+          </div>
+
+          </fieldset>
+        </fieldset>
 
 
           <div style="text-align: right">
-            <button type="submit" class="btn btn-success">Proximo>></button>
+            <button type="submit" class="btn btn-success">Salvar</button>
           </div>
         </form>
 
