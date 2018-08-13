@@ -9,7 +9,7 @@
 
         <div class="container">
           <div class="row">
-            <div class="col-6">
+            <div class="col-4">
               <img src="<?= base_url(); ?>assets/img/img1.jpg" >
             </div>
           </div>
