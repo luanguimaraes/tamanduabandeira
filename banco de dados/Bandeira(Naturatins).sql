@@ -111,11 +111,12 @@ CREATE TABLE avaliacao(
   marcacao_indv_sexagem VARCHAR(32),
   marcacao_indv_historico VARCHAR(32),
   marcacao_indv_anamnese VARCHAR(32),
-  avaliacao_compormental VARCHAR(102) NOT NULL ,
-  exames_arquivo varchar(200) NOT NULL ,
-  id_triagem INT NOT NULL,
+  avaliacao_compormental TEXT NOT NULL ,
+  exames_arquivo varchar(200),
+  status_animal INT NOT NULL,
+  identificacao_taxonomica_ava INT NOT NULL,
   PRIMARY KEY (id_avaliacao),
-  FOREIGN KEY (id_triagem) REFERENCES triagem(id_triagem)
+  FOREIGN KEY (identificacao_taxonomica_ava) REFERENCES recebimentos(identificacao_taxonomica)
   );
 
 CREATE TABLE procedimento(
@@ -258,5 +259,3 @@ FOREIGN KEY (id_animal) REFERENCES animal(id_animal)
 
   INSERT INTO animal (id_animal, categoria)
   VALUES ('8','Exóticos' );
-  
-  

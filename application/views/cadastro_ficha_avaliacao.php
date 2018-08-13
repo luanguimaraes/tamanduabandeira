@@ -8,7 +8,7 @@
       </div>
 
       <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
-        <form action="<?= base_url()?>ficha/cadastrar_triagem" method="post">
+        <form action="<?= base_url()?>ficha/cadastrar_avaliacao" method="post">
         <input type="hidden" id="id_taxonomica" name="id_taxonomica" value="<?=$id?>">
           <style media="screen">
             fieldset{

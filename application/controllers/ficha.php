@@ -283,21 +283,26 @@ class Ficha extends CI_Controller {
 
 	public function cadastrar_avaliacao($indice=null)
 	{
-		$id = $this->input->post('id_taxonomica');
+		$data['identificacao_taxonomica_ava'] = $this->input->post('id_taxonomica');
 
 
 
 
 
-		// $data['especie_avaliacao'] = $this->input->post('unidade');
-		// $data['marcacao_indv_tipo'] = $this->input->post('unidade');
-		// $data['marcacao_indv_localizacao'] = $this->input->post('unidade');
-		// $data['marcacao_indv_numeracao'] = $this->input->post('unidade');
-		// $data['marcacao_indv_sexagem'] = $this->input->post('unidade');
-		// $data['marcacao_indv_historico'] = $this->input->post('unidade');
-		// $data['marcacao_indv_anamnese'] = $this->input->post('unidade');
-		// $data['avaliacao_compormental'] = $this->input->post('unidade');
-		// $data['exames_arquivo'] = $this->input->post('unidade'); //??
+		$data['especie_avaliacao'] = $this->input->post('especie_avaliacao');
+		$data['marcacao_indv_tipo'] = $this->input->post('marcacao_indv_tipo');
+		$data['marcacao_indv_localizacao'] = $this->input->post('marcacao_indv_localizacao');
+		$data['marcacao_indv_numeracao'] = $this->input->post('marcacao_indv_numeracao');
+		$data['marcacao_indv_sexagem'] = $this->input->post('marcacao_indv_sexagem');
+		$data['marcacao_indv_historico'] = $this->input->post('marcacao_indv_historico');
+		$data['marcacao_indv_anamnese'] = $this->input->post('marcacao_indv_anamnese');
+		$data['avaliacao_compormental'] = $this->input->post('avaliacao_compormental');
+		$data['exames_arquivo'] = $this->input->post('exames_arquivo'); //??
+		$data['status_animal'] = $this->input->post('categoria_animal');
+
+		if($this->db->insert('avaliacao',$data)) {
+			redirect('ficha/1');
+		}
 
 
 	}
