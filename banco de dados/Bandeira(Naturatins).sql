@@ -38,7 +38,7 @@ senha VARCHAR(50) NOT NULL,
 id_unidade_usuario INT NOT NULL,
 PRIMARY KEY (id_servidor),
 FOREIGN KEY (id_tipo_servidor) REFERENCES tipo_servidor(id_tipo_servidor),
-FOREIGN KEY (id_unidade) REFERENCES unidade(id_unidade)
+FOREIGN KEY (id_unidade_usuario) REFERENCES unidade(id_unidade)
 );
 
 CREATE TABLE animal(
@@ -47,20 +47,6 @@ categoria VARCHAR(36),
 PRIMARY KEY (id_animal)
 );
 
-CREATE TABLE avaliacao(
-  id_avaliacao INT NOT NUlL AUTO_INCREMENT,
-  especie_avaliacao VARCHAR(64) NOT NULL ,
-  marcacao_indv_tipo VARCHAR(64) NOT NULL ,
-  marcacao_indv_localizacao VARCHAR(32) NOT NULL,
-  marcacao_indv_numeracao VARCHAR(32),
-  marcacao_indv_sexagem VARCHAR(32),
-  marcacao_indv_historico VARCHAR(32),
-  marcacao_indv_anamnese VARCHAR(32),
-  avaliacao_compormental VARCHAR(102) NOT NULL ,
-  exames_arquivo varchar(200) NOT NULL ,
-
-  PRIMARY KEY (id_avaliacao)
-  );
 
 
 CREATE TABLE recebimentos(
@@ -107,12 +93,30 @@ CREATE TABLE triagem(
 id_triagem INT NOT NULL AUTO_INCREMENT,
 marcacao_individual VARCHAR(64) NOT NULL ,
 nome_avaliador varchar(64)  NOT NULL,
-id_avaliacao INT NOT NUlL,
 identificacao_taxonomica INT NOT NULL,
+id_animal INT NOT NULL,
+id_unidade INT NOT NULL,
 PRIMARY KEY (id_triagem),
-FOREIGN KEY (id_avaliacao) REFERENCES avaliacao(id_avaliacao),
-FOREIGN KEY (identificacao_taxonomica) REFERENCES recebimentos(identificacao_taxonomica)
+FOREIGN KEY (identificacao_taxonomica) REFERENCES recebimentos(identificacao_taxonomica),
+FOREIGN KEY (id_animal) REFERENCES animal(id_animal),
+FOREIGN KEY (id_unidade) REFERENCES unidade(id_unidade)
 );                        /*criar chave estrageira aqui da tabela recebimentos identificação taxonomica*/
+
+CREATE TABLE avaliacao(
+  id_avaliacao INT NOT NUlL AUTO_INCREMENT,
+  especie_avaliacao VARCHAR(64) NOT NULL ,
+  marcacao_indv_tipo VARCHAR(64) NOT NULL ,
+  marcacao_indv_localizacao VARCHAR(32) NOT NULL,
+  marcacao_indv_numeracao VARCHAR(32),
+  marcacao_indv_sexagem VARCHAR(32),
+  marcacao_indv_historico VARCHAR(32),
+  marcacao_indv_anamnese VARCHAR(32),
+  avaliacao_compormental VARCHAR(102) NOT NULL ,
+  exames_arquivo varchar(200) NOT NULL ,
+  id_triagem INT NOT NULL,
+  PRIMARY KEY (id_avaliacao),
+  FOREIGN KEY (id_triagem) REFERENCES triagem(id_triagem)
+  );
 
 CREATE TABLE procedimento(
 id_procedimento INT NOT NULL AUTO_INCREMENT,
@@ -223,16 +227,16 @@ FOREIGN KEY (id_animal) REFERENCES animal(id_animal)
  VALUES ('0');
 
    INSERT INTO tipo_servidor (id_tipo_servidor, descricao_tipo_servidor)
-  VALUES ('1','gerente' );
+  VALUES ('1','Funcionário' );
 
   INSERT INTO tipo_servidor (id_tipo_servidor, descricao_tipo_servidor)
-  VALUES ('2','administrador' );
+  VALUES ('2','Gerente' );
 
   INSERT INTO tipo_servidor (id_tipo_servidor, descricao_tipo_servidor)
-  VALUES ('3','funcionário' );
+  VALUES ('3','Administrador' );
 
   INSERT INTO animal (id_animal, categoria)
-  VALUES ('1','Invertebradosanimal' );
+  VALUES ('1','Invertebrados' );
 
   INSERT INTO animal (id_animal, categoria)
   VALUES ('2','Peixes' );

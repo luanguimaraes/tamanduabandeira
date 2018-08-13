@@ -115,7 +115,7 @@ class Ficha extends CI_Controller {
 }
 
 
-	// 
+	//
 	// public function excluir($id=null)
 	// {
 	// 	$this->verificar_sessao();
@@ -197,6 +197,50 @@ class Ficha extends CI_Controller {
 		else{
 			redirect('ficha/6');
 		}
+	}
+
+	public function cadastro_triagem($indice=null)
+	{
+		$this->verificar_sessao();
+		$dados['unidades'] = $this->db->get('unidade')->result();
+		$dados['animais'] = $this->db->get('animal')->result();
+		$dados['usuario_logado'] = $this->session->userdata('nome');
+		$dados['id'] = $indice;
+		$this->load->view('includes/html_header');
+		$this->load->view('includes/menu');
+		$this->load->view('cadastro_ficha_triagem',$dados);
+		$this->load->view('includes/html_footer');
+	}
+
+	public function cadastrar_triagem($indice=null)
+	{
+		$this->verificar_sessao();
+		$this->db->select('identificacao_taxonomica');
+		$this->db->where('identificacao_taxonomica',$indice);
+		$retorno = $this->db->get('triagem')->num_rows();
+
+		$this->load->view('includes/html_header');
+		$this->load->view('includes/menu');
+		$this->load->view('cadastro_ficha_triagem',$data);
+		$this->load->view('includes/html_footer');
+
+		$data['id_unidade'] = $this->input->post('unidade');
+		$data['marcacao_individual'] = $this->input->post('marcacao_individual');
+		$data['nome_avaliador'] = $this->input->post('nome_avaliador');
+		$data['id_animal'] = $this->input->post('categoria_animal');
+		$data['identificacao_taxonomica'] = $this->input->post('id_taxonomica');
+
+		if($retorno > 0){
+			$this->db->where('identificacao_taxonomica',$indice);
+			if($this->db->update('triagem',$data)) {
+					redirect('ficha/1');
+			}
+		}else {
+			if($this->db->insert('triagem',$data)) {
+					redirect('ficha/1');
+			}
+		}
+
 	}
 
 

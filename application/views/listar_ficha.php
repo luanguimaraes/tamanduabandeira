@@ -32,8 +32,8 @@
             <td><?= date('d-m-Y' ,strtotime($ficha->data_recebimento))?></td>
             <td>
               <a href="<?= base_url('ficha/editar/'.$ficha->identificacao_taxonomica)?>" class="btn btn-primary btn-group">Recebimento</a>
-              <a href="<?= base_url('ficha/editar/'.$ficha->identificacao_taxonomica)?>" class="btn btn-danger btn-group" onclick="return confirm('Deseja excluir a ficha <?=$ficha->identificacao_taxonomica?>?');">Triagem</a>
-              <a href="#" class="btn btn-warning btn-group">Avaliação</a>
+              <a href="<?= base_url('ficha/cadastro_triagem/'.$ficha->identificacao_taxonomica)?>" class="btn btn-danger btn-group">Triagem</a>
+              <a href="<?= base_url('ficha/cadastro_avaliacao/'.$ficha->identificacao_taxonomica)?>" class="btn btn-warning btn-group">Avaliação</a>
             </td>
           </tr>
           <?php }?>
