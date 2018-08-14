@@ -233,6 +233,17 @@ class Ficha extends CI_Controller {
 		$dados['animais'] = $this->db->get('animal')->result();
 		$dados['usuario_logado'] = $this->session->userdata('nome');
 		$dados['id'] = $indice;
+
+		$this->db->select('identificacao_taxonomica');
+		$this->db->where('identificacao_taxonomica',$indice);
+		$retorno = $this->db->get('triagem')->num_rows();
+		$dados['retorno'] = $retorno;
+
+		if ($retorno>0) {
+			$this->db->where('identificacao_taxonomica',$indice);
+			$dados['triagem'] = $this->db->get('triagem')->result();
+		}
+
 		$this->load->view('includes/html_header');
 		$this->load->view('includes/menu');
 		$this->load->view('cadastro_ficha_triagem',$dados);
@@ -242,13 +253,14 @@ class Ficha extends CI_Controller {
 	public function cadastrar_triagem($indice=null)
 	{
 		$this->verificar_sessao();
+
 		$this->db->select('identificacao_taxonomica');
 		$this->db->where('identificacao_taxonomica',$indice);
 		$retorno = $this->db->get('triagem')->num_rows();
 
 		$this->load->view('includes/html_header');
 		$this->load->view('includes/menu');
-		$this->load->view('cadastro_ficha_triagem',$data);
+		$this->load->view('cadastro_ficha_triagem');
 		$this->load->view('includes/html_footer');
 
 		$data['id_unidade'] = $this->input->post('unidade');
@@ -260,7 +272,7 @@ class Ficha extends CI_Controller {
 		if($retorno > 0){
 			$this->db->where('identificacao_taxonomica',$indice);
 			if($this->db->update('triagem',$data)) {
-					redirect('ficha/1');
+					redirect('ficha/5');
 			}
 		}else {
 			if($this->db->insert('triagem',$data)) {
@@ -274,6 +286,16 @@ class Ficha extends CI_Controller {
 		$this->verificar_sessao();
 		$dados['id'] = $indice;
 
+		$this->db->select('identificacao_taxonomica_ava');
+		$this->db->where('identificacao_taxonomica_ava',$indice);
+		$retorno = $this->db->get('avaliacao')->num_rows();
+		$dados['retorno'] = $retorno;
+
+		if ($retorno>0) {
+			$this->db->where('identificacao_taxonomica_ava',$indice);
+			$dados['avaliacao'] = $this->db->get('avaliacao')->result();
+		}
+
 		$this->load->view('includes/html_header');
 		$this->load->view('includes/menu');
 		$this->load->view('cadastro_ficha_avaliacao',$dados);
@@ -283,12 +305,19 @@ class Ficha extends CI_Controller {
 
 	public function cadastrar_avaliacao($indice=null)
 	{
+
+		$this->verificar_sessao();
+
+		$this->db->select('identificacao_taxonomica_ava');
+		$this->db->where('identificacao_taxonomica_ava',$indice);
+		$retorno = $this->db->get('avaliacao')->num_rows();
+
+		$this->load->view('includes/html_header');
+		$this->load->view('includes/menu');
+		$this->load->view('cadastro_ficha_avaliacao');
+		$this->load->view('includes/html_footer');
+
 		$data['identificacao_taxonomica_ava'] = $this->input->post('id_taxonomica');
-
-
-
-
-
 		$data['especie_avaliacao'] = $this->input->post('especie_avaliacao');
 		$data['marcacao_indv_tipo'] = $this->input->post('marcacao_indv_tipo');
 		$data['marcacao_indv_localizacao'] = $this->input->post('marcacao_indv_localizacao');
@@ -300,12 +329,36 @@ class Ficha extends CI_Controller {
 		$data['exames_arquivo'] = $this->input->post('exames_arquivo'); //??
 		$data['status_animal'] = $this->input->post('categoria_animal');
 
-		if($this->db->insert('avaliacao',$data)) {
-			redirect('ficha/1');
+		if($retorno > 0){
+			$this->db->where('identificacao_taxonomica_ava',$indice);
+			if($this->db->update('avaliacao',$data)) {
+					redirect('ficha/5');
+			}
+		}else {
+			if($this->db->insert('avaliacao',$data)) {
+					redirect('ficha/1');
+			}
 		}
 
 
-	}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	}
 
 }

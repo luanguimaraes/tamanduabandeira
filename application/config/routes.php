@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'dashboard';
 $route['usuario/(:num)'] = 'usuario/index/$1';
-
+$route['ficha/(:num)'] = 'ficha/cadastro_triagem/$1';
 $route['unidade/(:num)'] = 'unidade/index/$1';
 $route['ficha/(:num)'] = 'ficha/index/$1';
 $route['404_override'] = '';
