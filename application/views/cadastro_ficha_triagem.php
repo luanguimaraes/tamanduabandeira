@@ -31,9 +31,9 @@
             <div class="form-group">
               <label for="exampleInputEmail1">Escolha a unidade da triagem:</label>
               <select id="unidade" name="unidade" class="form-control"   required>
-                <option value="1"> --- </option>
+
                 <?php foreach($unidades as $unidade) {?>
-                <option value="<?= $unidade->id_unidade?>"  <?= $retorno>=0? $unidade->id_unidade==$triagem[0]->id_unidade? 'selected' : '' : '' ?>    ><?= $unidade->nome_unidade.' - '.$unidade->municipio_unidade; ?></option>
+                <option value="<?= $unidade->id_unidade?>"  <?= $retorno>0? $unidade->id_unidade==$triagem[0]->id_unidade? 'selected' : '' : '' ?>    ><?= $unidade->nome_unidade.' - '.$unidade->municipio_unidade; ?></option>
                 <?php }?>
               </select>
             </div>
@@ -56,7 +56,7 @@
             <select class="form-control" name="categoria_animal" id="categoria_animal" required>
               <option value="0"> --- </option>
               <?php foreach($animais as $animal) {?>
-              <option value="<?= $animal->id_animal?>" <?= $retorno>=0? $animal->id_animal==$triagem[0]->id_animal? 'selected' : '' : '' ?>  ><?= $animal->categoria?></option>
+              <option value="<?= $animal->id_animal?>" <?= $retorno>0? $animal->id_animal==$triagem[0]->id_animal? 'selected' : '' : '' ?>  ><?= $animal->categoria?></option>
               <?php }?>
             </select>
           </div>

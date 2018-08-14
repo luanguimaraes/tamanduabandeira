@@ -84,11 +84,11 @@
           <div class="form-group">
             <label for="exampleInputNome">Categoria do Animal:  *</label>
             <select class="form-control" name="categoria_animal" id="categoria_animal" required>
-              <option value="0" <?= $retorno>=0? $avaliacao[0]->status_animal==0? 'selected' : '' : '' ?> >Status Animal</option>
-              <option value="1" <?= $retorno>=0? $avaliacao[0]->status_animal==1? 'selected' : '' : '' ?> >Cativeiro</option>
-              <option value="2" <?= $retorno>=0? $avaliacao[0]->status_animal==2? 'selected' : '' : '' ?> >Reabilitação</option>
-              <option value="3" <?= $retorno>=0? $avaliacao[0]->status_animal==3? 'selected' : '' : '' ?> >Áreas Soltura</option>
-              <option value="4" <?= $retorno>=0? $avaliacao[0]->status_animal==4? 'selected' : '' : '' ?> >Óbito</option>
+              <option value="0" <?= $retorno>0? $avaliacao[0]->status_animal==0? 'selected' : '' : '' ?> >Status Animal</option>
+              <option value="1" <?= $retorno>0? $avaliacao[0]->status_animal==1? 'selected' : '' : '' ?> >Cativeiro</option>
+              <option value="2" <?= $retorno>0? $avaliacao[0]->status_animal==2? 'selected' : '' : '' ?> >Reabilitação</option>
+              <option value="3" <?= $retorno>0? $avaliacao[0]->status_animal==3? 'selected' : '' : '' ?> >Áreas Soltura</option>
+              <option value="4" <?= $retorno>0? $avaliacao[0]->status_animal==4? 'selected' : '' : '' ?> >Óbito</option>
             </select>
           </div>
 

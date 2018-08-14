@@ -224,38 +224,48 @@ FOREIGN KEY (id_animal) REFERENCES animal(id_animal)
   FOREIGN KEY (id_avaliacao) REFERENCES avaliacao(id_avaliacao)
   );
 
-  INSERT INTO unidade (id_unidade)
- VALUES ('0');
 
-   INSERT INTO tipo_servidor (id_tipo_servidor, descricao_tipo_servidor)
-  VALUES ('1','Funcionário' );
+  INSERT INTO tipo_servidor (id_tipo_servidor, descricao_tipo_servidor) VALUES
+  ('1','Funcionário' ),
+  ('2','Gerente' ),
+  ('3','Administrador' );
 
-  INSERT INTO tipo_servidor (id_tipo_servidor, descricao_tipo_servidor)
-  VALUES ('2','Gerente' );
 
-  INSERT INTO tipo_servidor (id_tipo_servidor, descricao_tipo_servidor)
-  VALUES ('3','Administrador' );
+  INSERT INTO animal (id_animal, categoria) VALUES
+  ('1','Invertebrados' ),
+  ('2','Peixes' ),
+  ('3','Anfíbios' ),
+  ('4','Répteis' ),
+  ('5','Aves' ),
+  ('6','Mamíferos' ),
+  ('7','Híbridos' ),
+  ('8','Exóticos' );
 
-  INSERT INTO animal (id_animal, categoria)
-  VALUES ('1','Invertebrados' );
+  INSERT INTO `unidade` (`id_unidade`, `cnpj_unidade`, `nome_unidade`, `endereco_unidade`, `municipio_unidade`, `telefone_unidade`, `nome_responsavel`, `formacao_responsavel`, `fax_unidade`, `estado_unidade`, `cep_unidade`) VALUES
+  (1, '550213546', 'Unidade Praia Azul', 'Rua em algum lugar', 'Paraiso', '6333336245', 'João Ferreira', 'Tec. Info', '6336257854', 'Tocantins', 77023028),
+  (2, '996587545', 'Unidade Serra Amazonica', 'Avenida da praia', 'Palmas', '6332654774', 'Micauane', 'Superior em Admistração', '6332541252', 'Tocantins', 77123625),
+  (3, '213654587', 'Unidade Salva Vidas', 'Rua: 13 de Maio', 'Porto Nacional', '6336521478', 'Luan Guimarães', 'Básico', '6332654785', 'Tocantins', 77500000);
 
-  INSERT INTO animal (id_animal, categoria)
-  VALUES ('2','Peixes' );
+  INSERT INTO `servidor` (`id_servidor`, `cpf_usuario`, `nome_usuario`, `formacao_usuario`, `email_usuario`, `endereco_usuario`, `cidade_usuario`, `estado_usuario`, `telefone_usuario`, `id_tipo_servidor`, `senha`, `id_unidade_usuario`) VALUES
+  (1, '02523652044', 'Bianca Ferreira', 'Superior Contabilidade', 'biabia@bia.com', 'Rua alguma coisa coisa', 'Palmas', 'Tocantinss', '6399999999', 3, '15de21c670ae7c3f6f3f1f37029303c9', 2),
+  (2, '02834000131', 'Luan G Moraes', 'Noob', 'luanrufo@gmail.com', '804 Sul Alameda 2 Lote 54', 'Palmas', 'TO', '63992604920', 3, 'e10adc3949ba59abbe56e057f20f883e', 1),
+  (3, '03663225187', 'Nani', 'Noob', 'luan.guimaraes@live.com', 'Rua: 13 de Maio, Porto Imperial', 'Porto Nacional', 'TO', '63992604928', 1, '202cb962ac59075b964b07152d234b70', 1),
+  (4, '05053916195', 'Micauane Oliveira Sousa', 'Básico', 'micauaneoliveira@gmail.com', '504 sul alameda 8', 'Palmas', 'Tocantins', '6384086002', 3, '202cb962ac59075b964b07152d234b70', 2);
 
-  INSERT INTO animal (id_animal, categoria)
-  VALUES ('3','Anfíbios' );
+  INSERT INTO `recebimentos` (`identificacao_taxonomica`, `data_recebimento`, `nome_resp_entrega`, `cpf_resp_entrega`, `matricula_resp_entrega`, `nome_procedencia`, `uf_municipio_procedencia`, `residencia_procedencia`, `local_procedencia`, `deposito_procedencia`, `dieta`, `tempo_cativeiro`, `id_unidade_recebimento`) VALUES
+  (1, '2018-01-10', 'Luan G Moraes', '02834000131', 501214, 'Testando', 'Palmas-TO', 'Testando', 'Centro', 'Testando', 'Arroz', '1 ano', 2),
+  (2, '2018-05-16', 'Mauro G Medrado', '02834000131', 787556, 'Roubo de animais', 'Porto-TO', 'Algum', 'Indisponível', 'Não sei', 'Carne', '6 meses', 3);
 
-  INSERT INTO animal (id_animal, categoria)
-  VALUES ('4','Répteis' );
+  INSERT INTO `atuador` (`id_atuador`, `nome_atuador`, `cpf_cnpj_atuador`, `telefone_atuador`, `endereco_atuador`, `municipio_uf_atuador`, `cep_atuador`, `datta`, `auto_infracao_numero`, `boletim_ocorrencia_numero`, `identificacao_taxonomica`) VALUES
+  (1, 'Rogério Silva', '20156874511', '6332544789', 'Rua: 13 de Maio', 'Porto', 77500000, '2018-01-12', '547', 1022547803, 1),
+  (2, 'José Augusto', '23654785445', '', '', '', 0, '0000-00-00', '', 0, 2);
 
-  INSERT INTO animal (id_animal, categoria)
-  VALUES ('5','Aves' );
+  INSERT INTO `classicicacao_animal` (`id_cativeiro`, `nome_comum`, `nome_cientifico`, `quantidade`, `observacao_adicional`, `marcacao_individual`, `id_atuador`, `identificacao_taxonomica`) VALUES
+  (1, 'Gato do Mato', 'Leopardus tigrinus', 1, 'Cuidado que eles mordem', '365548', 1, 1),
+  (2, 'Cachorro', 'Canis lupus familiaris', 2, 'Não comem', '5848', 2, 2);
 
-  INSERT INTO animal (id_animal, categoria)
-  VALUES ('6','Mamíferos' );
+  INSERT INTO `triagem` (`id_triagem`, `marcacao_individual`, `nome_avaliador`, `identificacao_taxonomica`, `id_animal`, `id_unidade`) VALUES
+  (1, '5455', 'Luan G Moraes', 1, 6, 1);
 
-  INSERT INTO animal (id_animal, categoria)
-  VALUES ('7','Híbridos' );
-
-  INSERT INTO animal (id_animal, categoria)
-  VALUES ('8','Exóticos' );
+  INSERT INTO `avaliacao` (`id_avaliacao`, `especie_avaliacao`, `marcacao_indv_tipo`, `marcacao_indv_localizacao`, `marcacao_indv_numeracao`, `marcacao_indv_sexagem`, `marcacao_indv_historico`, `marcacao_indv_anamnese`, `avaliacao_compormental`, `exames_arquivo`, `status_animal`, `identificacao_taxonomica_ava`) VALUES
+  (1, 'L. tigrinus', '45', '5478845555525', '25545856', 'M', '5878', '5446', 'Gato maluco.', NULL, 1, 1);
