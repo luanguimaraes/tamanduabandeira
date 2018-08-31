@@ -17,7 +17,8 @@ class Unidade extends CI_Controller {
 		$dados['unidade'] = $this->db->get('unidade')->result();
 
 		$this->load->view('includes/html_header');
-		$this->load->view('includes/menu');
+		$this->load->view('includes/menu_superior');
+		$this->load->view('includes/menu_inferior_admin');
 		if ($indice==1) {
 			$data['msg'] = 'Unidade cadastrada com sucesso.';
 			$this->load->view('includes/msg_sucesso',$data);
@@ -45,7 +46,8 @@ class Unidade extends CI_Controller {
 	{
 		$this->verificar_sessao();
 		$this->load->view('includes/html_header');
-		$this->load->view('includes/menu');
+		$this->load->view('includes/menu_superior');
+		$this->load->view('includes/menu_inferior_admin');
 		$this->load->view('cadastro_unidade');
 		$this->load->view('includes/html_footer');
 	}
@@ -91,7 +93,8 @@ class Unidade extends CI_Controller {
 		$this->db->where('id_unidade',$id);
 		$data['unidade'] = $this->db->get('unidade')->result();
 		$this->load->view('includes/html_header');
-		$this->load->view('includes/menu');
+		$this->load->view('includes/menu_superior');
+		$this->load->view('includes/menu_inferior_admin');
 		$this->load->view('editar_unidade',$data);
 		$this->load->view('includes/html_footer');
 	}
@@ -111,7 +114,7 @@ class Unidade extends CI_Controller {
 		$data['cep_unidade'] = $this->input->post('cep');
 		$data['municipio_unidade'] = $this->input->post('cidade');
 		$data['estado_unidade'] = $this->input->post('estado');
-	
+
 
 		$this->db->where('id_unidade',$id);
 		if ($this->db->update('unidade',$data)) {

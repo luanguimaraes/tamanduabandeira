@@ -55,7 +55,8 @@ class Ficha extends CI_Controller {
 
 
 		$this->load->view('includes/html_header');
-		$this->load->view('includes/menu');
+		$this->load->view('includes/menu_superior');
+		$this->load->view('includes/menu_inferior_admin');
 		if ($indice==1) {
 			$data['msg'] = 'Ficha cadastrada com sucesso.';
 			$this->load->view('includes/msg_sucesso',$data);
@@ -86,7 +87,8 @@ class Ficha extends CI_Controller {
 		$dados['usuario_logado'] = $this->session->userdata('nome');
 		$dados['cpf_logado'] = $this->session->userdata('cpf');
 		$this->load->view('includes/html_header');
-		$this->load->view('includes/menu');
+		$this->load->view('includes/menu_superior');
+		$this->load->view('includes/menu_inferior_admin');
 		$this->load->view('cadastro_ficha_recebimento',$dados);
 		$this->load->view('includes/html_footer');
 	}
@@ -167,7 +169,8 @@ class Ficha extends CI_Controller {
 		$data['ficha_atuador'] = $this->db->get('atuador')->result();
 
 		$this->load->view('includes/html_header');
-		$this->load->view('includes/menu');
+		$this->load->view('includes/menu_superior');
+		$this->load->view('includes/menu_inferior_admin');
 		$this->load->view('editar_ficha_recebimento',$data);
 		$this->load->view('includes/html_footer');
 	}
@@ -245,7 +248,8 @@ class Ficha extends CI_Controller {
 		}
 
 		$this->load->view('includes/html_header');
-		$this->load->view('includes/menu');
+		$this->load->view('includes/menu_superior');
+		$this->load->view('includes/menu_inferior_admin');
 		$this->load->view('cadastro_ficha_triagem',$dados);
 		$this->load->view('includes/html_footer');
 	}
@@ -259,7 +263,8 @@ class Ficha extends CI_Controller {
 		$retorno = $this->db->get('triagem')->num_rows();
 
 		$this->load->view('includes/html_header');
-		$this->load->view('includes/menu');
+		$this->load->view('includes/menu_superior');
+		$this->load->view('includes/menu_inferior_admin');
 		$this->load->view('cadastro_ficha_triagem');
 		$this->load->view('includes/html_footer');
 
@@ -297,7 +302,8 @@ class Ficha extends CI_Controller {
 		}
 
 		$this->load->view('includes/html_header');
-		$this->load->view('includes/menu');
+		$this->load->view('includes/menu_superior');
+		$this->load->view('includes/menu_inferior_admin');
 		$this->load->view('cadastro_ficha_avaliacao',$dados);
 		$this->load->view('includes/html_footer');
 
@@ -313,7 +319,8 @@ class Ficha extends CI_Controller {
 		$retorno = $this->db->get('avaliacao')->num_rows();
 
 		$this->load->view('includes/html_header');
-		$this->load->view('includes/menu');
+		$this->load->view('includes/menu_superior');
+		$this->load->view('includes/menu_inferior_admin');
 		$this->load->view('cadastro_ficha_avaliacao');
 		$this->load->view('includes/html_footer');
 
@@ -339,25 +346,6 @@ class Ficha extends CI_Controller {
 					redirect('ficha/1');
 			}
 		}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	}
 

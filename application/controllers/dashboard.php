@@ -13,9 +13,38 @@ class Dashboard extends CI_Controller {
 	public function index()
 	{
 		$this->verificar_sessao();
+
+		// $this->db->select('id_animal');
+
+		$this->db->where('id_animal',1);
+		$dados['invertebrados'] = $this->db->get('triagem')->num_rows();
+
+		$this->db->where('id_animal',2);
+		$dados['peixes'] = $this->db->get('triagem')->num_rows();
+
+		$this->db->where('id_animal',3);
+		$dados['anfibios'] = $this->db->get('triagem')->num_rows();
+
+		$this->db->where('id_animal',4);
+		$dados['repteis'] = $this->db->get('triagem')->num_rows();
+
+		$this->db->where('id_animal',5);
+		$dados['aves'] = $this->db->get('triagem')->num_rows();
+
+		$this->db->where('id_animal',6);
+		$dados['mamiferos'] = $this->db->get('triagem')->num_rows();
+
+		$this->db->where('id_animal',7);
+		$dados['hibridos'] = $this->db->get('triagem')->num_rows();
+
+		$this->db->where('id_animal',8);
+		$dados['exoticos'] = $this->db->get('triagem')->num_rows();
+
+
 		$this->load->view('includes/html_header');
-		$this->load->view('includes/menu');
-		$this->load->view('dashboard');
+		$this->load->view('includes/menu_superior');
+		$this->load->view('includes/menu_inferior_admin');
+		$this->load->view('dashboard',$dados);
 		$this->load->view('includes/html_footer');
 	}
 

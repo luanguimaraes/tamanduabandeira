@@ -1,57 +1,67 @@
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Tela Inicial</h1>
-        </main>
-      </div>
+    <div id="content-wrapper">
+      <div class="container-fluid">
 
-      <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
-
-        <div class="container">
+        <div class="pb-2 mb-3 border-bottom align-items-center">
           <div class="row">
-            <div class="col-3">
-              <h6>Animais Exóticos</h6>
-              <img src="<?= base_url(); ?>assets/img/img1.jpg" alt="..." class="rounded">
-                <h6>Entrada quantidade :0</h6>
-            </div>
-            <div class="col-3">
-              <h6>Animais Mamíferos</h6>
-              <img src="<?= base_url(); ?>assets/img/img2.png" alt="..." class="rounded">
-                <h6>Entrada quantidade :0</h6>
-            </div>
-            <div class="col-3">
-              <h6>Animais Híbridos</h6>
-              <img src="<?= base_url(); ?>assets/img/img3.png" alt="..." class="rounded">
-                <h6>Entrada quantidade :0</h6>
-            </div>
-            <div class="col-3">
-              <h6>Animais Aves</h6>
-              <img src="<?= base_url(); ?>assets/img/img4.png" alt="..." class="rounded">
-                <h6>Entrada quantidade :0</h6>
-            </div>
-            <div class="col-3">
-              <h6>Animais Répteis</h6>
-              <img src="<?= base_url(); ?>assets/img/img5.png" alt="..." class="rounded">
-                <h6>Entrada quantidade :0</h6>
-            </div>
-            <div class="col-3">
-              <h6>Animais Anfíbios</h6>
-              <img src="<?= base_url(); ?>assets/img/img6.png" alt="..." class="rounded">
-                <h6>Entrada quantidade :0</h6>
-            </div>
-            <div class="col-3">
-              <h6>Animais Peixes</h6>
-              <img src="<?= base_url(); ?>assets/img/img7.png" alt="..." class="rounded">
-                <h6>Entrada quantidade :0</h6>
-            </div>
-            <div class="col-3">
-              <h6>Animais Anfíbios</h6>
-              <img src="<?= base_url(); ?>assets/img/img8.png" alt="..." class="rounded">
-                <h6>Entrada quantidade :0</h6>
+            <div class="col-12">
+              <h1 class="h2 titulo">Tela Inicial</h1>
             </div>
           </div>
         </div>
 
+        <div class="row">
+        <div class="col-12 col-md-12 col-sm-12 col-lg-12 mb-2">
+
+
+            <div class="row move">
+
+              <div class="col-12 col-sm-6 col-xl-3 col-md-3 col-lg-3">
+                <h6>Invertebrados</h6>
+                <img class="img alternativo" src="<?= base_url(); ?>assets/img/invertebrado.png" alt="Animal">
+                <span class="letra">Entrada quantidade: <?= $invertebrados?></span>
+              </div>
+              <div class="col-12 col-sm-6 col-xl-3 col-md-3 col-lg-3">
+                <h6>Peixes</h6>
+                <img class="img alternativo" src="<?= base_url(); ?>assets/img/peixe.png" alt="Animal">
+                <span class="letra">Entrada quantidade: <?= $peixes?></span>
+              </div>
+              <div class="col-12 col-sm-6 col-xl-3 col-md-3 col-lg-3">
+                <h6>Anfíbios</h6>
+                <img class="img alternativo" src="<?= base_url(); ?>assets/img/anfibio.png" alt="Animal">
+                <span class="letra">Entrada quantidade: <?= $anfibios?></span>
+              </div>
+              <div class="col-12 col-sm-6 col-xl-3 col-md-3 col-lg-3">
+                <h6>Répteis</h6>
+                <img class="img alternativo" src="<?= base_url(); ?>assets/img/reptil.png" alt="Animal">
+                <span class="letra">Entrada quantidade: <?= $repteis?></span>
+              </div>
+
+
+
+
+              <div class="col-12 col-sm-6 col-xl-3 col-md-3 col-lg-3">
+                <h6>Aves</h6>
+                <img class="img alternativo" src="<?= base_url(); ?>assets/img/ave.png" alt="Animal">
+                <span class="letra">Entrada quantidade: <?= $aves?></span>
+              </div>
+              <div class="col-12 col-sm-6 col-xl-3 col-md-3 col-lg-3">
+                <h6>Mamíferos</h6>
+                <img class="img alternativo" src="<?= base_url(); ?>assets/img/mamifero.png" alt="Animal">
+                <span class="letra">Entrada quantidade: <?= $mamiferos?></span>
+              </div>
+              <div class="col-12 col-sm-6 col-xl-3 col-md-3 col-lg-3">
+                <h6>Híbridos</h6>
+                <img class="img alternativo" src="<?= base_url(); ?>assets/img/hibrido.png" alt="Animal">
+                <span class="letra">Entrada quantidade: <?= $hibridos?></span>
+              </div>
+              <div class="col-12 col-sm-6 col-xl-3 col-md-3 col-lg-3">
+                <h6>Exóticos</h6>
+                <img class="img alternativo" src="<?= base_url(); ?>assets/img/exotico.jpg" alt="Animal">
+                <span class="letra">Entrada quantidade: <?= $exoticos?></span>
+              </div>
+
+            </div>
 
 
 
@@ -64,40 +74,7 @@
 
 
 
+        </div>
+        </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ------------------------------------------------------------------------------------------------------- -->
-
-      </div>
-    </div>
+    </div> <!-- fechamendo class="container-fluid" -->

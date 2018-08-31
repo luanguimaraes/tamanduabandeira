@@ -1,13 +1,16 @@
+  <div id="content-wrapper">
+    <div class="container-fluid">
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <div class="col-md-12">
-              <h1 class="h2">Novo Usuário</h1>
-            </div>
-        </main>
+      <div class="pb-2 mb-3 border-bottom align-items-center">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="h2 titulo">Novo Usuário</h1>
+          </div>
+        </div>
       </div>
 
-      <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="row">
+      <div class="col-md-12 col-sm-12 col-lg-12 mb-2">
         <form action="<?= base_url()?>usuario/cadastrar" method="post">
           <div class="form-group">
             <label for="exampleInputNome">Nome:</label>
@@ -67,7 +70,7 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Escolha a unidade:</label>
             <select id="unidade" name="unidade" class="form-control"  required>
-      
+
               <?php foreach($unidades as $unidade) {?>
               <option  value="<?= $unidade->id_unidade?>"><?= $unidade->nome_unidade.' - '.$unidade->municipio_unidade; ?></option>
               <?php }?>
@@ -97,10 +100,11 @@
 
           <div style="text-align: right">
             <button type="submit" class="btn btn-success">Enviar</button>
-            <button type="reset" class="btn btn-default">Cancelar</button>
+            <a href="<?=base_url()?>usuario" class="btn btn-danger">Cancelar</a>
           </div>
         </form>
 
       </div>
+      </div>
 
-    </div>
+  </div> <!-- fechamendo class="container-fluid" -->

@@ -18,7 +18,8 @@ class Usuario extends CI_Controller {
 		$dados['usuarios'] = $this->db->get('servidor')->result();
 
 		$this->load->view('includes/html_header');
-		$this->load->view('includes/menu');
+		$this->load->view('includes/menu_superior');
+		$this->load->view('includes/menu_inferior_admin');
 		if ($indice==1) {
 			$data['msg'] = 'Usuário cadastrado com sucesso.';
 			$this->load->view('includes/msg_sucesso',$data);
@@ -39,8 +40,7 @@ class Usuario extends CI_Controller {
 			$this->load->view('includes/msg_erro',$data);
 		}
 		$this->load->view('listar_usuario',$dados);
-		$this->load->view('includes/html_footer');
-
+	  $this->load->view('includes/html_footer');
 
 		// echo $this->session->userdata('nome');
 	}
@@ -50,7 +50,8 @@ class Usuario extends CI_Controller {
 		$this->verificar_sessao();
 		$dados['unidades'] = $this->db->get('unidade')->result();
 		$this->load->view('includes/html_header');
-		$this->load->view('includes/menu');
+		$this->load->view('includes/menu_superior');
+		$this->load->view('includes/menu_inferior_admin');
 		$this->load->view('cadastro_usuario',$dados);
 		$this->load->view('includes/html_footer');
 
@@ -85,7 +86,14 @@ class Usuario extends CI_Controller {
 		$this->verificar_sessao();
 		$this->db->where('id_servidor',$id);
 		if($this->db->delete('servidor')) {
-			redirect('usuario/3');
+			$id_user = $this->session->userdata('id');
+			if($id_user == $id){
+				redirect('dashboard/logout');
+			}
+			else{
+				redirect('usuario/3');
+			}
+
 		}
 		else {
 			redirect('usuario/4');
@@ -100,7 +108,8 @@ class Usuario extends CI_Controller {
 		$data['usuario'] = $this->db->get('servidor')->result();
 
 		$this->load->view('includes/html_header');
-		$this->load->view('includes/menu');
+		$this->load->view('includes/menu_superior');
+		$this->load->view('includes/menu_inferior_admin');
 		$this->load->view('editar_usuario',$data);
 		$this->load->view('includes/html_footer');
 	}
@@ -146,7 +155,8 @@ class Usuario extends CI_Controller {
 		$data['usuario'] = $this->db->get('servidor')->result();
 
 		$this->load->view('includes/html_header');
-		$this->load->view('includes/menu');
+		$this->load->view('includes/menu_superior');
+		$this->load->view('includes/menu_inferior_admin');
 		$this->load->view('perfil_usuario',$data);
 		$this->load->view('includes/html_footer');
 	}

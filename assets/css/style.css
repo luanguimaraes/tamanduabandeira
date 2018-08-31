@@ -1,0 +1,256 @@
+
+
+.botao{
+  float: right;
+}
+
+.tabela{
+  overflow-x: auto;
+
+}
+
+#desativado {
+    pointer-events: none;
+    cursor: default;
+}
+
+
+fieldset{
+  padding: 10px;
+  margin: 10px;
+  border-style: solid;
+  border-width: 0.5px;
+  border-radius: 10px;
+}
+legend{
+  display: inline-flex;
+  width: auto;
+}
+
+#avaliacao_compormental{
+  width: 100%;
+}
+
+.letra{
+
+  margin-top: 15px;
+
+  font-weight: bold;
+
+}
+
+
+
+/* .tamanho{
+  display: flex;
+  width: 80%;
+} */
+
+@media (max-width: 575px){
+  .titulo{
+    font-size: 25px;
+  }
+
+  .botao{
+    font-size: 11px;
+  }
+}
+
+/* @media (min-width: 576px) and (max-width: 767px){
+}
+@media (min-width: 768px) and (max-width: 991px){
+} */
+
+@media (max-width: 1200px){
+  .tamanho{
+    width: 100%;
+  }
+}
+
+
+
+
+/* CSS Paulo */
+
+.move{
+  overflow-x: auto;
+}
+
+ .alternativo{
+  margin-top: 4px;
+  width: 300px;
+  height: 100%;
+  padding: 29px;
+ }
+ h6{
+   position: absolute;
+   z-index: 1;
+   left: 45px;
+   top: 15px;
+ }
+
+ .letra{
+Z-index: 1;
+position: relative;
+top: -32px;
+left: 29px;
+
+ }
+@media only screen and (max-width: 2503px) {
+  .alternativo{
+margin-top: 24px;
+position:relative;
+padding: 30px;
+width: 210px;
+
+  }
+  h6{
+left: 44px;
+top: 36px;
+
+  }
+
+.letra{
+
+position: absolute;
+font-size: 14px;
+top: 175px;
+left: 47px;
+
+
+  }
+}
+
+.menu{
+
+  color: red;
+}
+
+@media only screen and (max-width: 1503px) {
+  .alternativo{
+margin-top: 24px;
+position:relative;
+padding: 30px;
+width: 210px;
+
+  }
+  h6{
+left: 44px;
+top: 36px;
+
+  }
+
+  .letra{
+
+position: absolute;
+font-size: 14px;
+top: 175px;
+left: 47px;
+
+
+  }
+}
+
+
+
+@media only screen and (max-width: 1203px) {
+  .alternativo{
+margin-top: 24px;
+position:relative;
+padding: 30px;
+width: 210px;
+
+  }
+  h6{
+left: 44px;
+top: 36px;
+
+  }
+
+  .letra{
+
+position: absolute;
+font-size: 14px;
+top: 175px;
+left: 44px;
+
+
+  }
+}
+
+@media only screen and (max-width: 1103px) {
+  .alternativo{
+margin-top: 24px;
+position:relative;
+padding: 30px;
+width: 210px;
+
+  }
+  h6{
+left: 44px;
+top: 36px;
+
+  }
+
+  .letra{
+
+position: absolute;
+font-size: 14px;
+top: 175px;
+left: 44px;
+
+
+  }
+}
+
+
+}
+@media only screen and (max-width: 990px) {
+
+  .alternativo{
+margin-top: 24px;
+position:relative;
+padding: 30px;
+width: 210px;
+
+  }
+  h6{
+left: 44px;
+top: 36px;
+
+  }
+
+  .letra{
+
+position: absolute;
+font-size: 14px;
+top: 175px;
+left: 44px;
+
+
+  }
+}
+@media only screen and (max-width: 768px) {
+  h6{
+    position: absolute;
+
+  }
+}
+
+.letra{
+top: 177px;
+
+}
+@media only screen and (max-width: 593px) {
+
+  .alternativo{
+width: 400px;
+
+  }
+
+  .letra{
+    top: 329px;
+
+  }
+
+}
