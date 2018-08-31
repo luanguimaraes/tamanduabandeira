@@ -2,7 +2,7 @@
   <ul class="sidebar navbar-nav">
     <li class="nav-item active">
       <a class="nav-link" href="<?= base_url()?>">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fas fa-fw fa-home"></i>
         <span>Home</span>
       </a>
     </li>

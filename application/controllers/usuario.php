@@ -19,7 +19,13 @@ class Usuario extends CI_Controller {
 
 		$this->load->view('includes/html_header');
 		$this->load->view('includes/menu_superior');
-		$this->load->view('includes/menu_inferior_admin');
+		$id_user = $this->session->userdata('id_tipo_servidor');
+		if ($id_user==3) {
+			$this->load->view('includes/menu_inferior_admin');
+		}
+		else{
+			$this->load->view('includes/menu_inferior');
+		}
 		if ($indice==1) {
 			$data['msg'] = 'Usuário cadastrado com sucesso.';
 			$this->load->view('includes/msg_sucesso',$data);
@@ -51,7 +57,13 @@ class Usuario extends CI_Controller {
 		$dados['unidades'] = $this->db->get('unidade')->result();
 		$this->load->view('includes/html_header');
 		$this->load->view('includes/menu_superior');
-		$this->load->view('includes/menu_inferior_admin');
+		$id_user = $this->session->userdata('id_tipo_servidor');
+		if ($id_user==3) {
+			$this->load->view('includes/menu_inferior_admin');
+		}
+		else{
+			$this->load->view('includes/menu_inferior');
+		}
 		$this->load->view('cadastro_usuario',$dados);
 		$this->load->view('includes/html_footer');
 
@@ -109,7 +121,13 @@ class Usuario extends CI_Controller {
 
 		$this->load->view('includes/html_header');
 		$this->load->view('includes/menu_superior');
-		$this->load->view('includes/menu_inferior_admin');
+		$id_user = $this->session->userdata('id_tipo_servidor');
+		if ($id_user==3) {
+			$this->load->view('includes/menu_inferior_admin');
+		}
+		else{
+			$this->load->view('includes/menu_inferior');
+		}
 		$this->load->view('editar_usuario',$data);
 		$this->load->view('includes/html_footer');
 	}
@@ -156,7 +174,13 @@ class Usuario extends CI_Controller {
 
 		$this->load->view('includes/html_header');
 		$this->load->view('includes/menu_superior');
-		$this->load->view('includes/menu_inferior_admin');
+		$id_user = $this->session->userdata('id_tipo_servidor');
+		if ($id_user==3) {
+			$this->load->view('includes/menu_inferior_admin');
+		}
+		else{
+			$this->load->view('includes/menu_inferior');
+		}
 		$this->load->view('perfil_usuario',$data);
 		$this->load->view('includes/html_footer');
 	}
