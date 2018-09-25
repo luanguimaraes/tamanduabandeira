@@ -1,6 +1,14 @@
 
           <div id="content-wrapper">
             <div class="container-fluid">
+
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="<?= base_url()?>ficha">Fichas</a>
+                </li>
+                <li class="breadcrumb-item active">Visão Geral</li>
+              </ol>
+
                 <div class="pb-2 mb-3 border-bottom align-items-center">
                   <div class="row">
                   <div class="col-3">

@@ -1,6 +1,13 @@
   <div id="content-wrapper">
     <div class="container-fluid">
 
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url()?>usuario">Usuários</a>
+        </li>
+        <li class="breadcrumb-item active">Novo Usuário</li>
+      </ol>
+
       <div class="pb-2 mb-3 border-bottom align-items-center">
         <div class="row">
           <div class="col-12">

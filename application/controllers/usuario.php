@@ -163,8 +163,8 @@ class Usuario extends CI_Controller {
 	public function perfil($id=null)
 	{
 		$this->verificar_sessao();
-
-		if ($id==null) {
+		$nani = $id;
+		if ($id=='user') {
 			$id = $this->session->userdata('id');
 		}
 
@@ -181,8 +181,14 @@ class Usuario extends CI_Controller {
 		else{
 			$this->load->view('includes/menu_inferior');
 		}
-		$this->load->view('perfil_usuario',$data);
+		if ($nani == 'user') {
+			$this->load->view('perfil_usuario',$data);
+		}else{
+			$this->load->view('perfil_usuario_adm',$data);
+		}
+
 		$this->load->view('includes/html_footer');
 	}
+
 
 }
